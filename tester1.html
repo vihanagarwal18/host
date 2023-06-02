@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple JSON Objects in HTML</title>
+</head>
+<body>
+    <div id="jsonContainer"></div>
+    <script>
+        var jsonArray=[
+            {
+                "quotes": [
+                    {"id":1,"quote":"hello1","author":"vihan agarwal"},
+                    {"id":2,"quote":"hello2","author":"gauransh sharama"}
+                ],
+                "total": 100,
+                "skip": 0,
+                "limit": 30
+            }
+        ];
+
+        var html1 = '';
+
+        // Generate JSON strings for each JSON object
+        for (var i = 0; i < jsonArray.length; i++) {
+            var jsonString = JSON.stringify(jsonArray[i]);
+            html1 += '<p>' + jsonString + '</p>';
+        }
+
+        // Insert the generated JSON strings into the document
+        document.getElementById("jsonContainer").innerHTML = html1;
+    </script>
+</body>
+</html>
+
